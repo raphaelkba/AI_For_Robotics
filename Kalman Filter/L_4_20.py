@@ -24,7 +24,9 @@ sig = 10000.
 
 # Insert code here
 for  i in range(len(motion)):
+    # update position
     mu, sig = update(measurements[i], measurement_sig, mu, sig)
+    # predict position given the motion
     mu, sig = predict(motion[i], motion_sig, mu, sig)
 
 print ([mu, sig])
